@@ -1,5 +1,5 @@
 --- alx_book_store Database
-CREATE DATABASE alx_book_store;
+CREATE DATABASE IF NOT EXISTS alx_book_store;
 
 --- Books Table
 CREATE TABLE IF NOT EXISTS books(
