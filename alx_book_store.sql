@@ -40,11 +40,9 @@ CREATE TABLE IF NOT EXISTS orders(
 --- Order_Details Table
 CREATE TABLE IF NOT EXISTS order_details(
     orderdetailid INT PRIMARY KEY,
-    order_id FOREIGN KEY (order_id) REFERENCES orders(order_id),
-    book_id FOREIGN KEY (book_id) REFERENCES books(book_id),
+    order_id INT FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    book_id INT FOREIGN KEY (book_id) REFERENCES books(book_id),
     quantity DOUBLE
 );
 -----------------------------------
 
-
-alx_book_store.sql doesn't contain: ["FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)"]
