@@ -5,7 +5,7 @@ CREATE DATABASE IF NOT EXISTS alx_book_store;
 CREATE TABLE IF NOT EXISTS books(
     book_id INT PRIMARY KEY,
     title VARCHAR(130),
-    author_id FOREIGN KEY REFERENCES authors(author_id),
+    author_id FOREIGN KEY (author_id) REFERENCES authors(author_id),
     price DOUBLE,
     publication_date DATE
 );
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS customers(
 --- Orders Table
 CREATE TABLE IF NOT EXISTS orders(
     order_id INT PRIMARY KEY,
-    customer_id INT FOREIGN KEY REFERENCES customers(customer_id),
+    customer_id INT FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
     order_date DATE
 );
 -----------------------------------
@@ -40,8 +40,11 @@ CREATE TABLE IF NOT EXISTS orders(
 --- Order_Details Table
 CREATE TABLE IF NOT EXISTS order_details(
     orderdetailid INT PRIMARY KEY,
-    order_id FOREIGN KEY REFERENCES orders(order_id),
-    book_id FOREIGN KEY REFERENCES books(book_id),
+    order_id FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    book_id FOREIGN KEY (book_id) REFERENCES books(book_id),
     quantity DOUBLE
 );
 -----------------------------------
+
+
+alx_book_store.sql doesn't contain: ["FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)"]
